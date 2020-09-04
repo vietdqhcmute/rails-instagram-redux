@@ -13,5 +13,7 @@ module App
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
+    config.autoload_paths += ["#{config.root}/app/serializers"]
+    ActiveModelSerializers.config.key_transform = :camel_lower
   end
 end
