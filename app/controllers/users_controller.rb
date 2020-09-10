@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-    users = User.all
-    render json: users, adapter: :json
+    render json: User.all
   end
+  
+  def show
+    render json: User.find(1)
+  end
+
+
 end
